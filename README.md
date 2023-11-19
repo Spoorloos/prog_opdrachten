@@ -4,7 +4,7 @@ Alle opdrachten van het vak PROG.
 
 ## Opdrachten
 
-### [Periode 1](https://github.com/SilvanDomino/SD1-PROG1/)
+### Periode 1 (https://github.com/SilvanDomino/SD1-PROG1/)
 
 - [Les 1](/Periode%201/Les%201)
 - [Les 2](/Periode%201/Les%202)
