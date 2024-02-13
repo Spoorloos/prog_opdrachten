@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script type="text/javascript">
+        function argumentsAreHandy(myArg) {
+            console.log('do you want to give a shoutout?');
+            console.log(myArg);
+        }
+
+        class App {
+            static runApplication() {
+                //argumentsAreHandy(); //undefined
+                //argumentsAreHandy("Super Shout out");
+                argumentsAreHandy('Cheese sticks');
+            }
+        }
+
+        App.runApplication();
+    </script>
+</body>
+</html>

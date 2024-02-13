@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1 class="header">Header 1</h1>
+    <h1 class="header">Header 2</h1>
+    <h1 class="header">Header 3</h1>
+    <h1 class="header">Header 4</h1>
+    <h1 class="header">Header 5</h1>
+
+    <script type="text/javascript">
+        // let headers = document.getElementsByTagName("h1");
+        let headers = document.getElementsByClassName("header");
+        let headerNames = [ "Nieuws", "Reviews", "Commentaar", "Beste forum posts", "Pricewatch" ];
+
+        for (let i = 0, len = headers.length; i < len; i++) {
+            //console.log(headers[i]);
+            //console.log(headers[i].innerText);
+            //headers[i].innerText = "huh?";
+            headers[i].innerText = headerNames[i];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas id="myCanvas" width="1000" height="500"></canvas>
+
+    <script type="text/javascript">
+        // Get canvas
+        const canvas = document.getElementById('myCanvas');
+        const context = canvas.getContext('2d');
+
+        // Create graph
+        const graph = [
+            { x: 20, y: 20 },
+            { x: 300, y: 300 },
+            { x: 580, y: 20 }
+        ]
+
+        // Create path
+        context.beginPath();
+
+        context.moveTo(graph[0].x, canvas.height - graph[0].y);
+        for (let i = 1, len = graph.length; i < len; i++) {
+            context.lineTo(graph[i].x, canvas.height - graph[i].y);
+        }
+
+        context.closePath();
+
+        // Draw graph
+        context.fillStyle = 'yellow';
+        context.fill();
+        context.stroke();
+    </script>
+</body>
+</html>

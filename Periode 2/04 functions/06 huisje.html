@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+
+    <script type="text/javascript">
+        class App {
+            constructor(id) {
+                // Get canvas and context
+                this.canvas = document.getElementById(id);
+                this.context = this.canvas.getContext('2d');
+
+                // Set canvas dimensions
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            moveTo(x, y, xOffset, yOffset, scale) {
+                this.context.moveTo((x + xOffset) * scale, (y + yOffset) * scale);
+            }
+
+            lineTo(x, y, xOffset, yOffset, scale) {
+                this.context.lineTo((x + xOffset) * scale, (y + yOffset) * scale); 
+            }
+
+            drawBall(x, y, size, xOffset, yOffset, scale) {
+                this.context.arc(
+                    (x + xOffset) * scale,
+                    (y + yOffset) * scale,
+                    size * scale,
+                    0, Math.PI*2
+                );
+            }
+
+            drawStar(x, y, radius, xOffset, yOffset, scale) {
+                let starLeg = true;
+                for (let i = 0; i <= 360; i += 36) {
+                    let angle = i * (Math.PI / 180);
+                    let rad = starLeg ? radius : (radius*0.4);
+
+                    this.lineTo(
+                        x - Math.sin(angle) * rad, 
+                        y - Math.cos(angle) * rad,
+                        xOffset, yOffset, scale
+                    );
+
+                    starLeg = !starLeg;
+                }
+            }
+
+            drawHouse(xOffset = 0, yOffset = 0, scale = 1) {
+                const context = this.context;
+
+                // Draw roof
+                {
+                    // Create path
+                    context.beginPath();
+                    this.moveTo(300, 100, xOffset, yOffset, scale);
+                    this.lineTo(700, 200, xOffset, yOffset, scale);
+                    this.lineTo(600, 400, xOffset, yOffset, scale);
+                    this.lineTo(200, 300, xOffset, yOffset, scale);
+                    context.closePath();
+
+                    // Fill
+                    context.fillStyle = 'red';
+                    context.fill();
+                    context.stroke();
+                }
+
+                // Draw left wall
+                {
+                    // Create path
+                    context.beginPath();
+                    this.moveTo(200, 300, xOffset, yOffset, scale);
+                    this.lineTo(600, 400, xOffset, yOffset, scale);
+                    this.lineTo(600, 600, xOffset, yOffset, scale);
+                    this.lineTo(200, 500, xOffset, yOffset, scale);
+                    context.closePath();
+
+                    // Fill
+                    context.fillStyle = '#888';
+                    context.fill();
+                    context.stroke();
+                }
+
+                // Draw window
+                {
+                    // Create path
+                    context.beginPath();
+                    this.moveTo(250, 350, xOffset, yOffset, scale);
+                    this.lineTo(550, 425, xOffset, yOffset, scale);
+                    this.lineTo(550, 500, xOffset, yOffset, scale);
+                    this.lineTo(250, 425, xOffset, yOffset, scale);
+                    context.closePath();
+
+                    // Fill
+                    context.fillStyle = '#808fa8';
+                    context.fill();
+                    context.stroke();
+                }
+
+                // Draw front wall & roof
+                {
+                    // Create path
+                    context.beginPath();
+                    this.moveTo(700, 200, xOffset, yOffset, scale);
+                    this.lineTo(800, 300, xOffset, yOffset, scale);
+                    this.lineTo(800, 500, xOffset, yOffset, scale);
+                    this.lineTo(600, 600, xOffset, yOffset, scale);
+                    this.lineTo(600, 400, xOffset, yOffset, scale);
+                    context.closePath();
+
+                    // Fill
+                    context.fillStyle = '#555';
+                    context.fill();
+                    context.stroke();
+                }
+            }
+
+            drawTree(xOffset = 0, yOffset = 0, scale = 1) {
+                const context = this.context;
+
+                // Draw tree
+                {
+                    // Create path
+                    context.beginPath();
+                    this.moveTo(75, 0, xOffset, yOffset, scale);
+                    this.lineTo(160, 250, xOffset, yOffset, scale);
+                    this.lineTo(0, 250, xOffset, yOffset, scale);
+                    context.closePath();
+
+                    // Fill
+                    context.fillStyle = '#008800';
+                    context.fill();
+                    context.stroke();
+                }
+
+                // Draw trunk
+                {
+                    // Create path
+                    context.beginPath();
+                    this.moveTo(55, 250, xOffset, yOffset, scale);
+                    this.lineTo(105, 250, xOffset, yOffset, scale);
+                    this.lineTo(105, 325, xOffset, yOffset, scale);
+                    this.lineTo(55, 325, xOffset, yOffset, scale);
+                    context.closePath();
+
+                    // Fill
+                    context.fillStyle = '#964B00';
+                    context.fill();
+                    context.stroke();
+                }
+
+                // Draw balls
+                {
+                    const ballPositions = [
+                        // Bottom ring
+                        { x: 20, y: 235 },
+                        { x: 50, y: 225 },
+                        { x: 80, y: 235 },
+                        { x: 110, y: 225 },
+                        { x: 140, y: 235 },
+
+                        // Middle ring
+                        { x: 40, y: 160 },
+                        { x: 65, y: 150 },
+                        { x: 90, y: 160 },
+                        { x: 115, y: 150 },
+
+                        // Top ring
+                        { x: 60, y: 95 },
+                        { x: 80, y: 85 },
+                        { x: 100, y: 95 }
+                    ];
+
+                    for (const { x, y } of ballPositions) {
+                        // Create path
+                        context.beginPath();
+                        this.drawBall(x, y, 10, xOffset, yOffset, scale);
+                        context.closePath();
+
+                        // Draw ball
+                        context.fillStyle = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                        context.fill();
+                    }
+                }
+
+                // Draw star
+                {
+                    // Create path
+                    context.beginPath();
+                    this.drawStar(75, 0, 25, xOffset, yOffset, scale);
+                    context.closePath();
+
+                    // Draw star
+                    context.fillStyle = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                    context.fill();
+                    context.stroke();
+                }
+            }
+        }
+
+        let app = new App('myCanvas');
+        app.drawHouse(null, null, 0.5);
+        app.drawTree(350, 100, 1);
+    </script>
+</body>
+</html>

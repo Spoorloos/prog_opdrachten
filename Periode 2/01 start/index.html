@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script type="text/javascript">
+        class App {
+            // Attributes
+            appNaam = "New App";
+            versieNummer = "1.0.0";
+            versieDatum = "Unknown";
+            autheur = "Unknown";
+            copyright = "Not copyrighted";
+            darkMode = false;
+
+            // Constuctor
+            constructor(values) {
+                for (const [ key, value ] of Object.entries(values)) {
+                    this[key] = value;
+                }
+            }
+
+            // Functions
+            runApplication() {
+                console.table(this);
+            }
+        }
+
+        const myApp = new App({
+            appNaam: "My App",
+            autheur: "Mick",
+            darkMode: true
+        });
+
+        myApp.runApplication()
+    </script>
+</body>
+</html>

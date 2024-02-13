@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        /*
+        let magicKaart = {
+            attack: 3,
+            defense: 2,
+            name: "Basic creature",
+            cost: [ "1R", "1B" ],
+            description: "This basic creature is better at attacking"
+        };
+
+        let spotifyPlaylist = {
+            accountName: "Mick",
+            songs: [
+                {
+                    artist: "The Beatles",
+                    title: "Something",
+                    album: "Abbey Road",
+                    trackNumber: 2,
+                    genre: "Rock"
+                },
+                {
+                    artist: "Elton John",
+                    title: "Goodbye Yellow Brick Road",
+                    album: "Goodbye Yellow Brick Road",
+                    trackNumber: 4,
+                    genre: "Rock"
+                },
+                {
+                    artist: "America",
+                    title: "A Horse with No Name",
+                    album: "America",
+                    trackNumber: 5,
+                    genre: "Rock"
+                }
+            ],
+            favouriteArtist: {
+                artistName: "The Beatles",
+                age: undefined,
+                grammyCount: 7,
+                number1HitsCount: 20,
+                genre: "Rock"
+            }
+        };
+
+        console.log(JSON.stringify(magicKaart));
+        console.log(JSON.stringify(spotifyPlaylist));
+        */
+
+        let coolJson = '{"legosetname":"Geluksdraak","itemnumber":80112,"pieces":1171,"releaseDate":"Binnenkort op 1 januari 2024","price":79.99}';
+        let parsed = JSON.parse(coolJson);
+        //console.log(parsed);
+
+        for (const [ index, value] of Object.entries(parsed)) {
+            console.log(index + ": " + value);
+        }
+    </script>
+</body>
+</html>

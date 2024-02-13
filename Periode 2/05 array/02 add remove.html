@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script type="text/javascript">
+        let artists = [ "The Beatles", "Radiohead", "Keane" ];
+
+        artists.push("Bob Dylan", "Prince");
+        //artists.splice(artists.indexOf("Bob Dylan"), 1);
+        artists.splice(-2, 2);
+
+        for (let i = 0; i < artists.length; i++) {
+            console.log(i+1 + ": " + artists[i]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas id="canvas" width="5000" height="5000"></canvas>
+
+    <script type="Module">
+        import HuisRenderer from "./HuisRenderer.mjs";
+        import BoomRenderer from "./BoomRenderer.mjs";
+
+        // Setup renderers
+        let huisRenderer = new HuisRenderer(canvas);
+        let boomRenderer = new BoomRenderer(canvas);
+
+        // Draw houses
+        for (let i = 0; i < 10; i++) {
+            huisRenderer.drawHouse(
+                Math.random() * 2000,
+                Math.random() * 2000,
+                0.2
+            );
+        }
+
+        // Draw trees
+        for (let i = 0; i < 10; i++) {
+            boomRenderer[Math.random() > 0.5 ? "drawTree" : "drawVariantTree"](
+                Math.random() * 2000,
+                Math.random() * 2000,
+                0.2
+            );
+        }
+    </script>
+</body>
+</html>

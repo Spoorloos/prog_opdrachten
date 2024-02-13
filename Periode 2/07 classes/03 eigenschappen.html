@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        class Greet {
+            constructor() {
+                this.greeting = "Greetings!";
+            }
+
+            showGreeting() {
+                console.log("greeting van binnen: " + this.greeting);
+            }
+        }
+
+        class Goodbye {
+            constructor() {
+                this.goodbye = "Goodbye!";
+            }
+
+            showGoodbye() {
+                console.log("goodbye van binnen: " + this.goodbye);
+            }
+        }
+
+        const greet = new Greet();
+        const bye = new Goodbye();
+
+        greet.showGreeting();
+        bye.showGoodbye();
+
+        greet.showGreeting();
+        bye.showGoodbye();
+
+        greet.showGreeting();
+        bye.showGoodbye();
+        
+        console.log("greeting van buiten: " + greet.greeting);
+        console.log("goodbye van buiten: " + bye.goodbye);
+    </script>
+</body>
+</html>

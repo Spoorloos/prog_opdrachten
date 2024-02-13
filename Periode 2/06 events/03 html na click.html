@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        button, div {
+            cursor: pointer;
+        }
+
+        div {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" onclick="buttonCallback()">Click me!</button>
+    <button type="button" onclick="infButtonCallback()">Infinite buttons!</button>
+    <div onclick="divCallback()">Click me!</div>
+
+    <script type="text/javascript">
+        function buttonCallback() {
+            /*
+            const header = document.createElement('h1');
+            header.textContent = 'My Header';
+
+            const paragraph = document.createElement('p');
+            paragraph.textContent = 'My Paragraph';
+            
+            const image = document.createElement('img');
+            image.alt = 'an image';
+            image.src = 'https://images.nrc.nl/CKoQvlMqmhJ6s7R9E6vT_aSKlR8=/640x/filters:no_upscale()/s3/static.nrc.nl/wp-content/uploads/2012/01/pingu.jpg';
+        
+            document.body.append(header, paragraph, image);
+            */
+
+            document.body.insertAdjacentHTML('beforeend', `
+                <h1>My Header</h1>
+                <p>My Paragraph</p>
+                <img alt="an image" src="https://images.nrc.nl/CKoQvlMqmhJ6s7R9E6vT_aSKlR8=/640x/filters:no_upscale()/s3/static.nrc.nl/wp-content/uploads/2012/01/pingu.jpg">
+            `);
+        }
+
+        function divCallback() {
+            const header = document.createElement('h1');
+            header.textContent = 'Clicked a div!';
+
+            document.body.appendChild(header);
+        }
+
+        function infButtonCallback() {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.onclick = infButtonCallback;
+            button.textContent = 'Infinite buttons!';
+
+            document.body.appendChild(button);
+        }
+    </script>
+</body>
+</html>

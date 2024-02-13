@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        let spotifyPlaylist = {
+            accountName: "Mick",
+            songs: [
+                {
+                    artist: "The Beatles",
+                    title: "Something",
+                    album: "Abbey Road",
+                    trackNumber: 2,
+                    genre: "Rock"
+                },
+                {
+                    artist: "Elton John",
+                    title: "Goodbye Yellow Brick Road",
+                    album: "Goodbye Yellow Brick Road",
+                    trackNumber: 4,
+                    genre: "Rock"
+                },
+                {
+                    artist: "America",
+                    title: "A Horse with No Name",
+                    album: "America",
+                    trackNumber: 5,
+                    genre: "Rock"
+                }
+            ],
+            favouriteArtist: {
+                artistName: "The Beatles",
+                age: undefined,
+                grammyCount: 7,
+                number1HitsCount: 20,
+                genre: "Rock"
+            }
+        };
+
+        console.log(spotifyPlaylist);
+        console.log(spotifyPlaylist.favouriteArtist);
+
+        for (const song of spotifyPlaylist.songs) {
+            console.log(song);
+        }
+    </script>
+</body>
+</html>

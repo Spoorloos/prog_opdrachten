@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        class Dino {
+            constructor(naam, vleesEter, leeftijd) {
+                this.naam = naam;
+                this.vleesEter = vleesEter;
+                this.leeftijd = leeftijd;
+            }
+        }
+
+        let dino = new Dino("T-Rex", true, 20);
+        console.log(`De leeftijd van deze ${dino.naam} is ${dino.leeftijd}`);
+        console.log(`En deze ${dino.naam} eet ${dino.vleesEter ? "wel" : "geen"} vlees`);
+    </script>
+</body>
+</html>

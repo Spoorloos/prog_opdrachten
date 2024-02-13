@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script type="text/javascript">
+        function heeftEenResultaat() {
+            const resultaat = -1;
+            return resultaat;
+        }
+
+        function ax2bcWiskunde(x, a, b, c) {
+            const y = a*x*x + b*x + c;
+            return y;
+        }
+
+        function mijnFunctie(u, h, l) {
+            return Math.log(l) + h + u**2;
+        }
+
+        class App {
+            static runApplication() {
+                //heeftEenResultaat();
+                //console.log(heeftEenResultaat());
+                
+                let resultaat = heeftEenResultaat();
+                console.log('Het resultaat is ', resultaat);
+            
+                const y1 = ax2bcWiskunde(9, 3, 4, 89),
+                    y2 = ax2bcWiskunde(3, 6, 5, 45),
+                    y3 = ax2bcWiskunde(7, 1, 2, 13);
+
+                console.log(y1, y2, y3);
+            }
+        }
+
+        App.runApplication();
+    </script>
+</body>
+</html>

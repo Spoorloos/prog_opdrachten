@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body { margin: 0; }
+    </style>
+</head>
+<body>
+    <canvas id="my-canvas"></canvas>
+
+    <script type="text/javascript">
+        // Get canvas and set dimensions
+        let canvas = document.getElementById('my-canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Create random circles
+        let context = canvas.getContext('2d');
+
+        for (let i = 0; i < 200; i++) {
+            let randomX = Math.random() * window.innerWidth;
+            let randomY = Math.random() * window.innerHeight;
+
+            // Create path
+            context.beginPath();
+            context.arc(randomX, randomY, Math.random() * 50, 0, Math.PI*2);
+            context.closePath();
+            
+            // Fill circle
+            context.fillStyle = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+            context.fill();
+            context.stroke();
+        }
+    </script>
+</body>
+</html>

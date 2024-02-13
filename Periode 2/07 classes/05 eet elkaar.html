@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        class Dino {
+            leeft = true;
+            honger = true;
+
+            constructor(naam, vleesEter, leeftijd) {
+                this.naam = naam;
+                this.vleesEter = vleesEter;
+                this.leeftijd = leeftijd;
+            }
+
+            eatFood(foodToEat) {
+                foodToEat.leeft = false;
+                this.honger = false;
+            }
+        }
+
+        let trex = new Dino("T-Rex", true, 20);
+        let triceratops = new Dino("Triceratops", false, 40);
+
+        trex.eatFood(triceratops);
+
+        console.log(`T-Rex alive: ${trex.leeft}, hunger: ${trex.honger}`);
+        console.log(`Triceratops alive: ${triceratops.leeft}, hunger: ${triceratops.honger}`);
+    </script>
+</body>
+</html>

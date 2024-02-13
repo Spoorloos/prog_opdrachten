@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body { margin: 0; }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+
+    <script type="text/javascript">
+        // Get canvas
+        const canvas = document.getElementById('myCanvas');
+        const context = canvas.getContext('2d');
+
+        // Set canvas size
+        let scale = 1.5;
+        canvas.width = window.innerWidth * scale;
+        canvas.height = window.innerHeight * scale;
+
+        // Functions
+        const moveTo = (x, y) => context.moveTo(x * scale, y * scale);
+        const lineTo = (x, y) => context.lineTo(x * scale, y * scale);
+
+        // Draw roof
+        {
+            // Create path
+            context.beginPath();
+            moveTo(300, 100);
+            lineTo(700, 200);
+            lineTo(600, 400);
+            lineTo(200, 300);
+            context.closePath();
+
+            // Fill
+            context.fillStyle = 'red';
+            context.fill();
+            context.stroke();
+        }
+
+        // Draw left wall
+        {
+            // Create path
+            context.beginPath();
+            moveTo(200, 300);
+            lineTo(600, 400);
+            lineTo(600, 600);
+            lineTo(200, 500);
+            context.closePath();
+
+            // Fill
+            context.fillStyle = '#888';
+            context.fill();
+            context.stroke();
+        }
+
+        // Draw window
+        {
+            // Create path
+            context.beginPath();
+            moveTo(250, 350);
+            lineTo(550, 425);
+            lineTo(550, 500);
+            lineTo(250, 425);
+            context.closePath();
+
+            // Fill
+            context.fillStyle = '#808fa8';
+            context.fill();
+            context.stroke();
+        }
+
+        // Draw front wall & roof
+        {
+            // Create path
+            context.beginPath();
+            moveTo(700, 200);
+            lineTo(800, 300);
+            lineTo(800, 500);
+            lineTo(600, 600);
+            lineTo(600, 400);
+            context.closePath();
+
+            // Fill
+            context.fillStyle = '#555';
+            context.fill();
+            context.stroke();
+        }
+    </script>
+</body>
+</html>

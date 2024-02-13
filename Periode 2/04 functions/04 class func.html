@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script type="text/javascript">
+        class App {
+            runApplication() {
+                console.log('Hello World!');
+            }
+
+            newClassFunction() {
+                console.log('Hello World, From my new class function!');
+            }
+
+            anotherFunctionWithArguments(x) {
+                console.log('kom maar met je argument');
+                console.log('hier:');
+                console.log(x);
+            }
+        }
+
+        let app = new App();
+        app.runApplication();
+        app.newClassFunction();
+        app.anotherFunctionWithArguments('mijn argument is iets...');
+    </script>
+</body>
+</html>

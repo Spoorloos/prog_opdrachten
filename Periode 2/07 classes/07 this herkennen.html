@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        class User {
+            constructor(naam) {
+                this.naam = naam;
+            }
+
+            wieBenIk() {
+                console.log("Mijn naam is ", this.naam);
+            }
+        }
+
+        const users = [
+            new User("Peter"), // this.naam = "Peter";
+            new User("Lois"), // this.naam = "Lois";
+            new User("Brian"), // this.naam = "Brian";
+            new User("Stewie"), // this.naam = "Stewie";
+            new User("Meg"), // this.naam = "Meg";
+            new User("Chris") // this.naam = "Chris";
+        ];
+
+        users[4].wieBenIk(); // Meg
+        users[2].wieBenIk(); // Brian
+        users[0].wieBenIk(); // Peter
+        users[5].wieBenIk(); // Chris
+        users[3].wieBenIk(); // Stewie
+        users[1].wieBenIk(); // Lois
+    </script>
+</body>
+</html>

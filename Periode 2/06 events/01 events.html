@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <button type="button" id="myButton">Click me!</button>
+    <!-- onclick="buttonCallback()" -->
+
+    <script type="text/javascript">
+        const button = document.getElementById('myButton');
+
+        function buttonCallback() {
+            console.log('You clicked the button!');
+        }
+
+        button.addEventListener('click', buttonCallback);
+    </script>
+</body>
+</html>

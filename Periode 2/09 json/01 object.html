@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        const magicKaart = {
+            attack: 3,
+            defense: 2,
+            name: "Basic creature",
+            cost: [ "1R", "1B" ],
+            description: "This basic creature is better at attacking"
+        };
+
+        console.log("You play: ", magicKaart.name);
+        console.log(magicKaart.description);
+        console.log(`${magicKaart.name} has ${magicKaart.attack} attack`);
+        console.log(`${magicKaart.name} has ${magicKaart.defense} defense`);
+        console.log("You paid: ", magicKaart.cost);
+    </script>
+</body>
+</html>

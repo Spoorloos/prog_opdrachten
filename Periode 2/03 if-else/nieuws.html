@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <p id="newstitle">Het nieuws</p>
+    <p class="gamenews headline">Mario kart 9 komt eindelijk eraan!</p>
+    <p class="gamenews">From software werkt aan nieuw project</p>
+
+    <script type="text/javascript">
+        // Get news title element
+        let newsTitle = document.getElementById('newstitle');
+        console.assert(newsTitle, 'Unable to find news title element');
+
+        // Get game news elements
+        let gameNews = document.getElementsByClassName('gamenews');
+        console.assert(gameNews.length > 0, 'Unable to find game news element');
+
+        // Set a random background color for all elements
+        for (const { style } of [ newsTitle, ...gameNews ]) {
+            const randomNumber = Math.random();
+
+            if (randomNumber < 0.2) {
+                style.backgroundColor = 'white';
+            } else if (randomNumber < 0.6) {
+                style.backgroundColor = 'red';
+            } else if (randomNumber < 0.75) {
+                style.backgroundColor = 'green';
+            } else {
+                style.backgroundColor = 'blue';
+            }
+        }
+    </script>
+</body>
+</html>
