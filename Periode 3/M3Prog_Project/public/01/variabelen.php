@@ -1,12 +1,12 @@
 <?php
-$mijnNaam = 'Mick';
-$mijnWoonplaats = 'Avenhorn';
-$mijnLeeftijd = 16;
-$huidigeTemperatuur = 6.5;
+    $mijnNaam = 'Mick';
+    $mijnWoonplaats = 'Avenhorn';
+    $mijnLeeftijd = 16;
+    $huidigeTemperatuur = 6.5;
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <title>Variabelen</title>
     <meta charset="UTF-8">
