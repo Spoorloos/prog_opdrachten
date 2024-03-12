@@ -14,10 +14,10 @@
 </head>
 <body>
     <p>
-        Mijn naam: <?php echo $mijnNaam; ?><br>
-        Mijn woonplaats: <?php echo $mijnWoonplaats; ?><br>
-        Mijn leeftijd: <?php echo $mijnLeeftijd; ?><br>
-        Huidige temperatuur: <?php echo $huidigeTemperatuur; ?>
+        Mijn naam: <?= $mijnNaam; ?><br>
+        Mijn woonplaats: <?= $mijnWoonplaats; ?><br>
+        Mijn leeftijd: <?= $mijnLeeftijd; ?><br>
+        Huidige temperatuur: <?= $huidigeTemperatuur; ?>
     </p>
 </body>
 </html>
